@@ -1,8 +1,8 @@
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // POSIX API
+#include <stdlib.h> // Standatd sys I/O
  
-int main()
+int main() // This the declaration for the main program function
 {
    char ch, source_file[20], target_file[20];
    FILE *source, *target;
@@ -10,7 +10,7 @@ int main()
    printf("Enter name of file to copy\n");
    gets(source_file);
  
-   source = fopen(source_file, "r");
+   source = fopen(source_file, "r"); //opens the filename pointed to
  
    if( source == NULL )
    {
@@ -36,7 +36,6 @@ int main()
    printf("File copied successfully.\n");
  
    fclose(source);
-   fclose(target);
- 
+   fclose(target); //closes the stream
    return 0;
 }
